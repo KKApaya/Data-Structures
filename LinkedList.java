@@ -135,6 +135,64 @@ class Node{
                 }
                 current = current.next;
             }
+}
+/*
+    *This method retrieves, but does not remove, the first element of this list, or returns null if this list is empty.
+    */
+    public int peekFirst​(){
+        if(head == null) return 0;
+        int first = head.data;
+        return first;
+    }
+
+    /*
+    *This method retrieves, but does not remove, the last element of this list, or returns null if this list is empty.
+    */
+    public int peekLast​(){
+        if(head == null) return 0;
+        Node current = head;
+        while(current!=null){
+            if(current.next==null){
+                return current.data;
+            }
+            current = current.next;
+        }
+        return 0;
+    }
+
+    /*
+    *This method returns the number of elements in this list.
+    */
+    public int size​(){
+        if(head == null) return 0;
+        Node current = head;
+        int count = 0;
+
+        while(current!=null){
+            count ++;
+            current = current.next;
+        }
+        return count;
+        
+    } 
+
+    /*
+    *Set​(int index, E element): This method replaces the element at the specified position in this list with the specified element.
+    */
+    public void set(int index,int data){
+        if(head == null) return ;
+        Node current = head;
+        int count = 0;
+
+        while(current!=null){
+            if(index == count){
+                current.data = data;
+            }
+            count++;
+            current = current.next;
+        }
+    }
+
         
     }
 }
